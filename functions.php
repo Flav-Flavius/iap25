@@ -71,3 +71,10 @@ function iap_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'iap_setup' );
+
+function iap25_enqueue_scripts() {
+	wp_enqueue_style( 'iap25-reset', get_template_directory_uri() . '/assets/css/reset.css', array(), IAP_VERSION );
+	wp_enqueue_style( 'iap25-normalize', get_template_directory_uri() . '/assets/css/normalize.css', array(), IAP_VERSION );
+	wp_enqueue_style( 'iap25-style', get_stylesheet_uri(), array(), IAP_VERSION );
+}
+add_action( 'wp_enqueue_scripts', 'iap25_enqueue_scripts' );

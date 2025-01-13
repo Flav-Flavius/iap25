@@ -16,7 +16,7 @@ get_header();
 ?>
 <div class="main">
     <div class="container">
-        <div class="featured-post"></div>
+        <div class="featured-post">Ce vrem noi pentru autori</div>
     </div>
     <div class="container">
         <div class="article-box__list">

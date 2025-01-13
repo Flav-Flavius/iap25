@@ -8,3 +8,302 @@ Version: 1.0
 Text domain: iap25
 Tags: custom-menu, custom-logo, editor-style, full-site-editing, two-columns
 */
+
+:root {
+    --brand-dark: #232536;
+    --brand-primary-color: #FFD050;
+    --brand-secondary-color: #592EA9;
+    
+    --brand-dark-gray: #1E1E1E;
+    --brand-medium-gray: #6E6E6E;
+    --brand-light-grey: #EAEAEA;
+    --brand-background: #F4F0F8;
+    --brand-light-yellow:#FBF6EA;
+    --brand-lavander: #F4F0F8;
+    --brand-white: #FFF;
+
+
+
+    --brand-button-color: var(--brand-primary-color);
+    --brand-button-color-hover: #EDC14A;
+
+    --brand-link-color: var(--brand-secondary-color);
+
+    --h1-font-size: 48px;
+    --h1-line-height: 64px;
+
+    --h2-font-size: 36px;
+    --h2-line-height: 48px;
+
+    --h3-font-size: 28px;
+    --h3-line-height: 36px;
+
+    --h4-font-size: 24px;
+    --h4-line-height: 32px;
+
+    --h5-font-size: 20px;
+    --h5-line-height: 32px;
+
+    --h6-font-size: 16px;
+    --h6-line-height: 24px;
+
+    --body-font-size: 16px;
+    --body-line-height: 28px;
+
+    --bond-font-size--small: 14px;
+    --bond-line-height--small: 20px;
+
+    --gap: 8px;
+    --gap--medium: calc(2 * var(--gap));
+    --gap--large: calc(4 * var(--gap));
+    --gap--xlarge: calc(8 * var(--gap));
+}
+
+/*--------------------------------------------------------------
+# Document Setup
+--------------------------------------------------------------*/
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+
+body {
+    font-family: "Sen", sans-serif;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    background-color: va(--brand-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    line-height: var(--h1-line-height); /* 133.333% */
+    letter-spacing: -2px;
+}
+h2 {
+    font-size: var(--h2-font-size);
+    font-weight: 700;
+    line-height: var(--h2-line-height); /* 133.333% */
+    letter-spacing: -2px;
+}
+h3 {
+    font-size: var(--h3-font-size);
+    font-weight: 700;
+    line-height: var(--h3-line-height); /* 133.333% */
+    letter-spacing: -2px;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: var(--brand-dark);
+    color: var(--brand-white);
+    padding: 12px 0;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+	## Links
+	## Menus
+--------------------------------------------------------------*/
+
+.header__menu ul {
+    display: flex;
+    align-items: center; 
+    gap:24px;
+}
+.header__menu .current-menu-item a {
+    color: var(--brand-primary-color);
+}
+
+.header__menu ul li:last-of-type a {
+    background-color: var(--brand-white);
+    padding: 16px 48px;
+    color:var(--brand-dark);
+    font-weight: bold;
+    display: inline-block;
+}
+
+.header__menu ul li:last-of-type a:hover {
+    background-color: var(--brand-lavander);
+}
+
+.header__logo a {
+    display: block;
+    line-height: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Layout ## Main Content
+--------------------------------------------------------------*/
+
+.article-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap--large);
+    margin-bottom: var(--gap--xlarge);
+    margin-top: var(--gap--xlarge);
+}
+.article-box:has(img) {
+    grid-template-columns: 490px 1fr;
+}
+.article-box__image {
+    
+}
+.article-box__image img {
+    object-fit: cover;
+    /* aspect-ratio: 1/1;    */
+}
+.article-box__category {
+
+}
+.article-box__category .post-categories {
+    display: flex;
+}
+.article-box__category a {
+    color: var(--brand-secondary-color);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.article-box__category a:hover {
+    color: var(--brand-primary-color);
+}
+
+.article-box__content {
+    align-content: center;
+} 
+.article-box__content h2 {
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: -2px;
+    font-weight: 700;
+}
+.article-box__content h2 a:hover {
+    color: var(--brand-primary-color);
+}
+
+.pagination {
+    margin-bottom: var(--gap--xlarge);
+}
+.pagination .wp-pagenavi .pages {
+    display: none;
+}
+.pagination .wp-pagenavi a, 
+.pagination .wp-pagenavi span {
+    padding: 8px 16px;
+    background-color: #FFF;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.pagination .wp-pagenavi a:hover, 
+.pagination .wp-pagenavi span:hover {
+    border-color:var(--brand-primary-color);
+    color:var(--brand-secondary-color);
+}
+
+.pagination .wp-pagenavi span.current {
+    background: var(--brand-primary-color);
+    border:1px solid var(--brand-primary-color);
+}
+
+
+/*--------------------------------------------------------------
+# Content ## Single Article 
+--------------------------------------------------------------*/
+.article-single {
+    display: grid;
+    grid-template-columns: 219px 1fr 219px;
+    grid-template-areas: 
+        ". header ."
+        "image image image"
+        ". content .";
+}
+.article-single .article-single__header {
+    grid-area: header;
+}
+.article-single .article-single__content {
+    grid-area: content;
+}
+
+.article-single .article-single__featured_image {
+    grid-area: image;
+}
+
+
+/*--------------------------------------------------------------
+# Layout ## Footer
+--------------------------------------------------------------*/
+
+
+.site-footer {
+    background-color: var(--brand-dark);
+    padding:59px 0 56px;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-navigation ul {
+    display: flex;
+    align-items: center;
+    gap:24px;
+}
+.footer-navigation a {
+    color:#FFF;
+    font-weight: 400;
+}
+.footer-navigation li.current-menu-item a,
+.footer-navigation a:hover {
+    color:var(--brand-primary-color);
+}
+
+.site-footer .footer-contact {
+    color:#FFF;
+    opacity: 0.7;
+}
+
+.site-footer .footer-social-media ul {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.site-footer .footer-social-media ul li a svg {
+    fill:#FFF;
+    opacity: 0.7;
+    transition: fill 500ms;
+}
+.site-footer .footer-social-media ul li a:hover svg{
+    fill:var(--brand-primary-color);
+    opacity: 1;
+}

@@ -14,6 +14,26 @@
 
 get_header();
 ?>
+<div class="main">
+    <div class="container">
+        <div class="featured-post"></div>
+    </div>
+    <div class="container">
+        <div class="article-box__list">
+            <?php 
+                if ( have_posts() ) :
+                    /* Start the Loop */
+                    while ( have_posts() ) : the_post();
+                        get_template_part(  'template-parts/content/content' );
+                    endwhile;
+                else :
+                    echo 'nu avem continut sa afisam';
+                endif;
+            ?>
+            <?php get_template_part(  'template-parts/pagination' ); ?>
+        </div>
+    </div>
 
+</div>
 <?php
 get_footer();
