@@ -22,16 +22,18 @@ while ( have_posts() ) : the_post();
         <article <?php post_class( array( 'article-single' ) ) ?>>
             <div class="article-single__header">
                 <div class="article-single__meta">
+                    <div class="article-single__avatar"><?php echo get_avatar( get_the_author_ID(  ) ); ?></div>
                     <div class="article-single__author"><?php echo get_the_author(); ?></div>
-                    <div class="article-single__date"><?php echo get_the_date( 'j F Y' ); ?></div>
-                    <div class="article-single__category"><?php the_category( $separator = ', ' ); ?></div>
+                    <div class="article-single__date">Posted on <?php echo get_the_date( 'j F Y' ); ?></div>
+                    
                 </div>
                 <div class="article-single__title">
                     <?php the_title( '<h1>', '</h1>' ); ?>
+                    <div class="article-single__category"><?php the_category( $separator = ', ' ); ?></div>
                 </div>
             </div>
             <div class="article-single__featured_image">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail( 'blog-detail-size' ); ?>
             </div>
             <div class="article-single__content">
                 <?php the_content(); ?>
